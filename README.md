@@ -1,5 +1,5 @@
 
-#fortunate-racer
+#doolio
 To Do List - Doolio
 
 What you will be able to do with this app:
