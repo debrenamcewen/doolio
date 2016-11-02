@@ -2,11 +2,11 @@ extends layout
 
 block content
 
-    div.login
-      .col-sm-4.col-md-4
-        .container
+
+    .container
+      div.login
           .row
-            .col-sm-6.col-md-4.col-md-offset-4
+            .col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4.col-lg-6.col-lg-offset-3
               h1.text-center.login-title doolio
               .account-wall
                 form.form-signin
@@ -32,30 +32,30 @@ block content
                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                       span(aria-hidden='true') ×
                     h4#myModalLabel.modal-title Sign Up
-                  .modal-body
+                  form.modal-body( method="post", action="/user/signup" )
 
                     fieldset
-                        0
+
 
                       .control-group
                         // Username
                         label.control-label(for='username') Username
                         .controls
-                          input#username.input-xlarge(type='text', name='username', placeholder='')
+                          input#username.input-xlarge(type='text', name='UserName', placeholder='')
                           p.help-block Username can contain any letters or numbers, without spaces
                       .control-group
                         // E-mail
                         label.control-label(for='email') E-mail
                         .controls
-                          input#email.input-xlarge(type='text', name='email', placeholder='')
+                          input#email.input-xlarge(type='text', name='Email', placeholder='')
                           p.help-block Please provide your E-mail
                       .control-group
                         // Password
                         label.control-label(for='password') Password
                         .controls
-                          input#password.input-xlarge(type='password', name='password', placeholder='')
+                          input#password.input-xlarge(type='password', name='Password', placeholder='')
                           p.help-block Password should be at least 4 characters
 
-                  .modal-footer
-                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-                    button.bt n.btn-primary(type='button') Save changes
+                          .modal-footer
+                            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                            button.btn.btn-primary(type='submit') Save changes
