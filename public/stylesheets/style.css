@@ -2,7 +2,8 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url('https://images.unsplash.com/photo-1474377207190-a7d8b3334068?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=77d4eec0ae594ab16945af4d2cff78fc');
-   background-size: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -15,7 +16,26 @@ height:100;
 }
 
 .login {
-  /*background-color: #ffffff;*/
   margin: auto 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  margin-left: 25%;
+  margin-right:25%;
+}
 
+.white-background {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+}
+
+.search-box {
+margin-left: 50%;
+padding-top: 1%;
+
+}
+
+img.patterns  {
+  margin-bottom: 5px;
 }
