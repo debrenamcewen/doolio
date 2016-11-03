@@ -21,6 +21,7 @@ PRIMARY KEY ("UserID")
 CREATE TABLE "Projects" (
 "ProjectID"  SERIAL ,
 "Name" VARCHAR(50) NOT NULL ,
+"Notes" TEXT ,
 "UserID_Users" INTEGER ,
 PRIMARY KEY ("ProjectID")
 );
