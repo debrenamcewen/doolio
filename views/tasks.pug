@@ -2,23 +2,23 @@ extends layout
 
 block content
 
-  .col-xs-6.col-xs-offset-3.col-sm-10.col-sm-offset-1
-    div.white-background
-      .row
+
+  div.white-background
+    .row
+      .col-xs-12.col-sm-10.col-sm-offset-1.col-md-10.col-md-offset-1
         nav.navbar.navbar-light.bg-faded
           ul.nav.navbar-nav
             li.nav-item.active
                 span.sr-only (current)
             li.nav-item
-              a.nav-link(href='#') TASKS
-            li.nav-item
               a.nav-link(href='#') DASHBOARD
+            li.nav-item
+              a.nav-link(href='#') TASKS
           form.form-inline.float-xs-right
             div.search-box
               input.form-control(type='text', placeholder='Search')
               button.btn.btn-outline-success(type='submit') Search
-        .row
-          .col-xs-6.col-xs-offset-2.col-sm-4.col-sm-offset-2
-            img.pattern(src="../images/pattern.png")
-          .col-sm-7
-              img.pattern(src="../images/reminder.png")
+              br
+              br
+
+    hr
