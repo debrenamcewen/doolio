@@ -47,7 +47,7 @@
 <default>NULL</default></row>
 <row name="Name" null="1" autoincrement="0">
 <datatype>VARCHAR(100)</datatype>
-</row>
+<default>NULL</default></row>
 <row name="DateStart" null="1" autoincrement="0">
 <datatype>DATE</datatype>
 <default>NULL</default></row>
@@ -95,6 +95,9 @@
 <row name="Name" null="0" autoincrement="0">
 <datatype>VARCHAR(50)</datatype>
 </row>
+<row name="Notes" null="1" autoincrement="0">
+<datatype>TEXT</datatype>
+<default>NULL</default></row>
 <row name="UserID_Users" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="Users" row="UserID" />
