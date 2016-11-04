@@ -45,3 +45,7 @@ img.pattern  {
 .tasks-box {
   background-color: blue;
 }
+#login {
+  background-color: white;
+  padding:10px;
+}

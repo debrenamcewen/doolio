@@ -26,10 +26,10 @@ block content
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-10.col-md-offset-1
           .tasks-box
 
-      //- ol
-      //-   each project in projects
-      //-     li
-      //-       a(href="/projects/"+project.id)= project.Name
+      ol
+        each project in deliveredObject
+          li
+            a(href="/projects/"+project.ProjectID) #{project.Name}
 
       .new-project
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-10.col-md-offset-1
@@ -43,7 +43,7 @@ block content
                 button.close(type='button', data-dismiss='modal', aria-label='Close')
                   span(aria-hidden='true') ×
                 h4#myModalLabel.modal-title New Project
-              form.modal-body( method="post", action="/user/signup" )
+              form.modal-body( method="post", action="/projects/createProject" )
 
                 fieldset
 
@@ -52,13 +52,14 @@ block content
                     // Project Name
                     label.control-label(for='project name') Project Name
                     .controls
-                      input#username.input-xlarge(type='text', name='UserName', placeholder='')
+                      input#username.input-xlarge(type='text', name='Name', placeholder='')
                       p.help-block
                   .control-group
                     // Description
-                    label.control-label(for='description') Description
+                    label.control-label(for='Notes') Notes
                     .controls
-                      textarea.span6(rows='3', required='')
+                      input#username.input-xlarge(type='text', name='Notes', placeholder='')
+                      p.help-block
 
 
                       .modal-footer
