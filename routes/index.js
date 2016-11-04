@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { User } = require( '../database/queries' )
+const { User } = require( '../database/sql' )
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -58,6 +58,27 @@ router.post( '/user/signup', ( request, response ) => {
     .then( user => response.redirect( '/dashboard' ) )
     .catch( error => response.json( { error } ) )
 
+})
+
+router.get( '/user/login', (request, response ) => {
+  res.render('login', {
+    email: ''
+  })
+})
+
+router.post( '/user/login', ( request, response ) => {
+  const email = request.body.email
+  const password = request.body.password
+  db.authenticateUser( email, password )
+  .then( userId => {
+    if (userId) {
+      request.session.userId = userId
+      response.redirect('/dashboard')
+    } else {
+      response.render('login')
+        error: 'Email or Password not Found'
+    }
+  })
 })
 
 router.post('/project/newproject',(request,response) => {
