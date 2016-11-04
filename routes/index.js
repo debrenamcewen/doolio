@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { User } = require( '../database/queries' )
+const { User,Project } = require( '../database/queries' )
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -48,22 +48,32 @@ router.get('/tasks', function(req, res, next) {
 
 
 router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Express' });
+  // SERAFIN ADDED:
+  Project.getAllProjects( function(things) {
+      console.log( "SERAFIN TEST:", things );
+      res.render('projects', { title: 'Express', deliveredObject: things });
+  }); // END OF SERAFIN ADDED
+
+  /* SERAFIN SUBTRACTED
+  const allProjects = Project.getAllProjects();
+  console.log( "SERAFIN TEST:", allProjects );
+  res.render('projects', { title: 'Express', allProjects: allProjects });
+  */
 })
 
 
 router.post( '/user/signup', ( request, response ) => {
   const { body } = request
   User.insert( body )
-    .then( user => response.redirect( '/dashboard' ) )
+    .then( user => response.redirect( '/projects' ) )
     .catch( error => response.json( { error } ) )
 
 })
 
-router.post('/project/newproject',(request,response) => {
+router.post('/projects/createProject',(request,response) => {
   const {body} = request
   Project.insert(body)
-    .then(project => response.redirect('/dashboard'))
+    .then(project => response.redirect('/projects'))
     .catch(error => response.json({error}))
 })
 
